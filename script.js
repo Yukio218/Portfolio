@@ -3,7 +3,7 @@ gsap.to(".pillar",
     y: "-120%",
     duration: 1.2,
     ease: "power4.inOut",
-    stagger: 0.2,
+    stagger: 0.25,
     onComplete: () => document.querySelector(".loader").remove()
 });
 

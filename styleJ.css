@@ -2,14 +2,14 @@
 @font-face 
 {
     font-family: 'Madani';
-    src: url(Fonts/MadaniArabicDEMO-Bold.otf) format(truetype); 
+    src: url(Fonts/MadaniArabicDEMO-Bold.otf) format('opentype'); 
 }
 
 /* Ajout de police */
 @font-face 
 {
     font-family: 'Mustica';
-    src: url(Fonts/MadaniArabicDEMO-Regular.otf) format(truetype);
+    src: url(Fonts/MadaniArabicDEMO-Regular.otf) format('opentype');
 }
 
 /* Ajout d'animation */
@@ -22,8 +22,13 @@
 /* Modification du tout */
 body 
 {
+    background-image: url("Images/BlackWhite.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     margin: 0;
     background-color: #181818;
+
 }
 
 
@@ -52,30 +57,6 @@ body
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .Logo
 {
     text-align: left;
@@ -85,17 +66,6 @@ body
     margin-left: 1%;
     margin-right: 60%;
 }
-
-/* Ajout de la bannière */
-header 
-{
-    background-image: url("");
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 350px;
-}
-
 
 /* Modification des textes H2 (Message Bienvunue) */
 h2
@@ -107,16 +77,18 @@ h2
 
 /**/
 .HoverMenu,
-.ActiveMenu {
+.ActiveMenu 
+{
     position: relative;
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: bold;
     padding-bottom: 5px;
 }
 
 .HoverMenu::after,
-.ActiveMenu::after {
+.ActiveMenu::after 
+{
     content: '';
     position: absolute;
     bottom: 0;
@@ -129,11 +101,13 @@ h2
     transition: transform 0.3s ease;
 }
 
-.ActiveMenu::after {
+.ActiveMenu::after 
+{
     transform: translateX(-50%) scaleX(1);
 }
 
-.HoverMenu:hover::after {
+.HoverMenu:hover::after 
+{
     transform: translateX(-50%) scaleX(1);
 }
 
@@ -141,7 +115,7 @@ h2
 nav 
 {
     
-    background-color: #181818;
+    background-color: #18181800;
     padding: 0px;
     
 }
@@ -151,18 +125,17 @@ nav ul
 {
     display: flex;
     justify-content: content;
-    text-align: center;
     list-style: none;
-    padding-top: 30px;
+    padding: 30px;
     margin: 0;
-    text-align: right;
 }
 
 /* Modification des LI dans le menu de navigation */
 nav li 
 {
     display: inline-block;
-    margin: 35px 20px;
+    padding-top: 1%;
+    margin: 1.5% 20px;
     font-family: 'Mustica';
     transition: transform 0.3s ease;
     white-space: nowrap;
@@ -174,162 +147,49 @@ nav li:hover
     transform: scale(1.1)
 }
 
-/* Boutton Connexion */
-.Connexion
-{   
-    font-family: 'Madani';
-    background-color: rgb(255, 255, 255);
-    padding: 14.5px 18px;
-    border-radius: 25px;
-    color: rgb(0, 0, 0);
-}
-
 /* Modification des A dans le menu de navigation */
-nav a 
+nav a
 {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: bold;
 }
 
+
+/* Boutton Connexion */
+.Connexion
+{   
+    font-family: 'Madani';
+    background-color: rgb(0, 0, 0);
+    padding: 14.5px 18px;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+}
+
+
 /* Modification du contenue principale */
 main 
 {
+    display: flex;
     border-radius: 15px;
-    background-image: url("Images/DégradéNoire.png");
-    background-repeat: no-repeat;
-    background-position: center;
     font-family: 'Mustica';
     background-size: 100%;
-    color: white;
+    color: rgb(255, 255, 255);
     
-
     margin-left: 7%;
     padding: 3%;
     width: 70%;
 }
 
-/* Modification de tous les Boites */
-.Container
+.Profil
 {
-    display: flex;
-    padding: 30px;
-    font-family: 'Mustica';
+    justify-content: right;
+    margin-left: 30%;
+    height: 100%;
+    width: 80%;
+    border-radius: 7%;
 
-    position: relative;
-    animation: anim 1.2s ease-out forwards;
-}
 
-/* Modification de les boites sur la 1ère ligne */
-.Box1
-{
-
-    display: flex;
-    max-width: 600px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.523);
-    box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.523);
-
-    transition: transform 0.3s ease;
-
-    position: relative;
-    animation: anim 1.6s ease-out forwards;
-
-}
-
-/* Effet lors de survol sur les boites */
-.Box1:hover
-{
-    transform: scale(1.05);
-}
-
-/* Modification du boutton dans les boites */
-.suivre
-{
-    background-color: rgb(229, 229, 229);
-    color:#0f0f0f;
-    text-decoration: none;
-    padding: 9px 85px;
-    border-radius: 15px;
-
-    transition: transform 0.3s ease;
-}
-
-/* Modification de les boites sur la 2ème ligne */
-.Box2
-{
-
-    display: flex;
-    max-width: 600px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.523);
-    box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.523);
-
-    transition: transform 0.3s ease;
-
-    position: relative;
-    animation: anim 1s ease-out forwards;
-
-}
-
-/* Effet lors de survol sur les boites */
-.Box2:hover
-{
-    transform: scale(1.05);
-}
-
-/* Modification de les boites sur la 3ème ligne */
-.Box3
-{
-
-    display: flex;
-    max-width: 600px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.523);
-    box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.523);
-
-    transition: transform 0.3s ease;
-
-    position: relative;
-    animation: anim 0.7s ease-out forwards;
-
-}
-
-/* Effet lors de survol sur les boites */
-.Box3:hover
-{
-    transform: scale(1.05);
-}
-
-/* Modification du Titre et de la description dans les Boites */
-.TextBox
-{
-    padding: 10px;
-}
-
-/* Modification des Images dans les Boites */
-.ImgB
-{
-    height: 190px;
-    width: 340px;
-    border-radius: 20px;
-}
-
-/* Modification des Videos dans les Boites */
-video
-{
-    height: 190px;
-    width: 340px;
-    border-radius: 20px;
 }
 
 /* Modification Pied de page */
