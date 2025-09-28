@@ -27,7 +27,15 @@ body
     background-size: cover;
     background-position: center;
     background-color: #181818;
+    margin: 0;
+    padding: 0;
 
+}
+
+img
+{
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -219,16 +227,41 @@ footer
     padding: 13px 0;
 }
 
+/* Mobiles (≤ 768px) */
 @media (max-width: 768px) {
+    nav .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+    nav li {
+        margin: 10px 0;
+    }
     main {
-        flex-direction: column; /* stack text and image */
+        flex-direction: column;
         text-align: center;
+        padding: 20px;
     }
     .Profil {
         max-width: 250px;
-        margin-top: 20px;
+        margin: 20px auto;
     }
     h2 {
-        font-size: 36px; /* scale down */
+        font-size: 32px;
+    }
+}
+
+/* Très petits écrans (≤ 480px) */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+    .Connexion {
+        padding: 10px 14px;
+        font-size: 14px;
     }
 }
