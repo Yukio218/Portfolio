@@ -26,7 +26,6 @@ body
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin: 0;
     background-color: #181818;
 
 }
@@ -47,8 +46,9 @@ body
 .pillar
 {
     flex: 1;
-    background: white;
-    border-right: 1px solid #c4c4c4;
+    background: rgb(255, 255, 255);
+    border-right: 1px solid #e0d3b3;
+    border-bottom: 1px solid #e0d3b3;
 }
 
 .pillar:last-child
@@ -59,19 +59,17 @@ body
 
 .Logo
 {
-    text-align: left;
-    height: 4%;
+    height: auto;
     width: 70px;
     border-radius: 20px;  
-    margin-left: 1%;
-    margin-right: 60%;
+    margin: 0 20px 0 1%;
 }
 
 /* Modification des textes H2 (Message Bienvunue) */
 h2
 {
     font-family: 'Madani';
-    font-size: 60px;
+    font-size: 75px;
     margin-top: 0;
 }
 
@@ -95,7 +93,7 @@ h2
     left: 50%;
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     transform: translateX(-50%) scaleX(0);
     transform-origin: center;
     transition: transform 0.3s ease;
@@ -120,14 +118,23 @@ nav
     
 }
 
+nav .nav-container 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
 /* Modification des UL dans le menu de navigation */
 nav ul 
 {
     display: flex;
-    justify-content: content;
+    align-items: center;
     list-style: none;
-    padding: 30px;
     margin: 0;
+    padding: 20px;
+    gap: 15px;
 }
 
 /* Modification des LI dans le menu de navigation */
@@ -135,7 +142,7 @@ nav li
 {
     display: inline-block;
     padding-top: 1%;
-    margin: 1.5% 20px;
+    margin: 1.5% 1%;
     font-family: 'Mustica';
     transition: transform 0.3s ease;
     white-space: nowrap;
@@ -171,34 +178,57 @@ nav a
 main 
 {
     display: flex;
-    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
     font-family: 'Mustica';
     background-size: 100%;
     color: rgb(255, 255, 255);
-    
-    margin-left: 7%;
-    padding: 3%;
-    width: 70%;
+    margin: 0 2%;
+    padding: 4% 2% 0 2%;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.TextBox
+{
+    margin: 10%;
+    margin-right: 20%;
 }
 
 .Profil
 {
+    max-width: 1900px;
+    width: 100%;
     justify-content: right;
-    margin-left: 30%;
-    height: 100%;
-    width: 80%;
+    height: auto;
     border-radius: 7%;
-
-
 }
 
 /* Modification Pied de page */
 footer 
 {
+    position: absolute;
     font-family: 'Mustica';
+    width: 100%;
+    bottom: 0;
+    left: 0;
     clear: both;
-    background-color: #121212;
-    color: white;
+    background-color: #181818;
+    color: rgb(255, 255, 255);
     text-align: center;
-    padding: 15px;
+    padding: 13px 0;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* stack text and image */
+        text-align: center;
+    }
+    .Profil {
+        max-width: 250px;
+        margin-top: 20px;
+    }
+    h2 {
+        font-size: 36px; /* scale down */
+    }
 }
