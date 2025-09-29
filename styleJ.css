@@ -22,6 +22,12 @@
 /* Modification du tout */
 body 
 {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    overflow: hidden;
     background-image: url("Images/BlackWhite.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,8 +35,8 @@ body
     background-color: #181818;
     margin: 0;
     padding: 0;
-
 }
+
 
 img
 {
@@ -76,8 +82,9 @@ img
 /* Modification des textes H2 (Message Bienvunue) */
 h2
 {
+    mix-blend-mode: difference;
     font-family: 'Madani';
-    font-size: 75px;
+    font-size: 5em;
     margin-top: 0;
 }
 
@@ -87,7 +94,8 @@ h2
 {
     position: relative;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
     font-weight: bold;
     padding-bottom: 5px;
 }
@@ -194,7 +202,7 @@ main
     margin: 0 2%;
     padding: 4% 2% 0 2%;
     width: 100%;
-    max-width: 1200px;
+    max-width: 90em;
 }
 
 .TextBox
@@ -212,6 +220,11 @@ main
     border-radius: 7%;
 }
 
+p
+{
+    mix-blend-mode: difference;
+}
+
 /* Modification Pied de page */
 footer 
 {
@@ -224,11 +237,17 @@ footer
     background-color: #181818;
     color: rgb(255, 255, 255);
     text-align: center;
-    padding: 13px 0;
+    padding: min(7em 0, 13em 0);
 }
 
-/* Mobiles (≤ 768px) */
-@media (max-width: 768px) {
+/* Mobiles */
+@media (max-width: 768px) 
+{
+    body
+    {
+        height: auto;
+        overflow: auto;
+    }
     nav .nav-container {
         flex-direction: column;
         align-items: flex-start;
@@ -246,16 +265,24 @@ footer
         text-align: center;
         padding: 20px;
     }
-    .Profil {
-        max-width: 250px;
+    .Profil 
+    {
+        width: 80%;
+        height: auto;
+        max-height: none;
         margin: 20px auto;
     }
     h2 {
         font-size: 32px;
     }
+    footer 
+    {
+        position: relative;
+        padding: 1em;
+    }
 }
 
-/* Très petits écrans (≤ 480px) */
+/* Petit */
 @media (max-width: 480px) {
     h2 {
         font-size: 24px;
