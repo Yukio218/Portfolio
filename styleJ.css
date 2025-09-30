@@ -84,8 +84,9 @@ h2
 {
     mix-blend-mode: difference;
     font-family: 'Madani';
-    font-size: 5em;
+    font-size: clamp(1.4rem, 4.5vw, 6rem);
     margin-top: 0;
+    margin-bottom: 30px;
 }
 
 /**/
@@ -139,7 +140,7 @@ nav .nav-container
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 15px 30px;
 }
 
 /* Modification des UL dans le menu de navigation */
@@ -200,20 +201,20 @@ main
     background-size: 100%;
     color: rgb(255, 255, 255);
     margin: 0 2%;
-    padding: 4% 2% 0 2%;
+    padding: 1% 2% 0 2%;
     width: 100%;
-    max-width: 90em;
+    max-width: 105rem;
 }
 
 .TextBox
 {
-    margin: 10%;
-    margin-right: 20%;
+    margin: 1em 0 10% 10%;
+    margin-right: min(30rem, 20%);
 }
 
 .Profil
 {
-    max-width: 1900px;
+    max-width: 100em;
     width: 100%;
     justify-content: right;
     height: auto;
@@ -241,53 +242,77 @@ footer
 }
 
 /* Mobiles */
-@media (max-width: 768px) 
+@media (max-width: 960px) 
 {
     body
     {
         height: auto;
         overflow: auto;
     }
-    nav .nav-container {
+    nav .nav-container 
+    {
         flex-direction: column;
         align-items: flex-start;
     }
-    nav ul {
+    nav ul 
+    {
         flex-direction: column;
         width: 100%;
         padding: 10px 0;
     }
-    nav li {
+    nav li 
+    {
         margin: 10px 0;
     }
-    main {
+    main 
+    {
         flex-direction: column;
         text-align: center;
-        padding: 20px;
+        max-width: 91vw;
+        padding: 20px 0px 0 15px;
     }
     .Profil 
     {
         width: 80%;
         height: auto;
         max-height: none;
-        margin: 20px auto;
+        margin: 30px auto 0 auto;
+        transform: translateY(2%);
     }
-    h2 {
+    .TextBox 
+    {
+        background-color: #0000007a;
+        border-radius: 20px;
+        margin: 0 15px;
+        padding: 2rem;
+    }
+    p
+    {
+        mix-blend-mode: normal;
+    }
+    h2 
+    {
+        mix-blend-mode: normal;
         font-size: 32px;
     }
+
     footer 
     {
+        max-width: 91vw;
         position: relative;
-        padding: 1em;
+        padding: 1.3rem;
+        
     }
 }
 
 /* Petit */
 @media (max-width: 480px) {
-    h2 {
+    h2 
+    {
         font-size: 24px;
     }
-    .Connexion {
+    .Connexion 
+    {
         padding: 10px 14px;
         font-size: 14px;
     }
